@@ -1,9 +1,10 @@
 package com.example.usersService.reposiroty;
 
-import com.example.usersService.model.User;
+import com.example.usersService.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+import java.util.ArrayList;
+
+public interface UserRepository extends JpaRepository<User, Integer> {
+    ArrayList<User> findAllUsers();
 }

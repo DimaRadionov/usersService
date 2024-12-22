@@ -1,7 +1,11 @@
 package com.example.usersService.services;
 
-import org.springframework.stereotype.Service;
+import com.example.usersService.models.User;
 
-@Service
-public class UserService {
+
+public interface UserService{
+    void addUser(User user);
+    User findById(int id);
+    void update (User user);
+    void delete(User user);
 }
