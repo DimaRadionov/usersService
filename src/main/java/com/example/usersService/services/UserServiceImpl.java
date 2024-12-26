@@ -1,14 +1,9 @@
 package com.example.usersService.services;
 
 import com.example.usersService.models.User;
-import com.example.usersService.reposiroty.UserRepository;
-import jakarta.transaction.Transactional;
-import lombok.NoArgsConstructor;
+import com.example.usersService.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +12,12 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    UserRepository userRepository;
 
+    /*@Autowired
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }*/
 
     /*@Override
     public void addUser(@Param ("username") String username,
@@ -29,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public void addUser(@Param ("user") User user) {
+    public void addUser(@Param("user") User user) {
         userRepository.save(user);
     }
 
