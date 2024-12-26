@@ -4,8 +4,9 @@ import com.example.usersService.models.User;
 import com.example.usersService.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -33,8 +34,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(int id) {
-        return null;
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
     }
 
     @Override

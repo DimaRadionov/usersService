@@ -1,9 +1,7 @@
 package com.example.usersService.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Entity
 @Table(name = "users")
